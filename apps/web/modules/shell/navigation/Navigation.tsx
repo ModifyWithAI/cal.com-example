@@ -12,7 +12,8 @@ import classNames from "@calcom/ui/classNames";
 import { useHasPaidPlan } from "@calcom/web/modules/billing/hooks/useHasPaidPlan";
 
 import UnconfirmedBookingBadge from "../../bookings/components/UnconfirmedBookingBadge";
-import { KBarTrigger } from "../Kbar";
+import { CommandPaletteTrigger } from "@calcom/web/modules/command-palette/CommandPalette";
+
 import { TeamInviteBadge } from "../TeamInviteBadge";
 import type { NavigationItemType } from "./NavigationItem";
 import { NavigationItem, MobileNavigationItem, MobileNavigationMoreItem } from "./NavigationItem";
@@ -236,7 +237,7 @@ export const Navigation = ({ isPlatformNavigation = false }: { isPlatformNavigat
         <NavigationItem key={item.name} item={item} />
       ))}
       <div className="text-subtle mt-0.5 lg:hidden">
-        <KBarTrigger />
+        <CommandPaletteTrigger />
       </div>
     </nav>
   );

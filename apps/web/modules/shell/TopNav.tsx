@@ -7,7 +7,8 @@ import { useLocale } from "@calcom/lib/hooks/useLocale";
 import { SettingsIcon } from "@coss/ui/icons";
 import { Logo } from "@calcom/ui/components/logo";
 
-import { KBarTrigger } from "./Kbar";
+import { CommandPaletteTrigger } from "@calcom/web/modules/command-palette/CommandPalette";
+
 import { UserDropdown } from "./user-dropdown/UserDropdown";
 
 export function TopNavContainer() {
@@ -30,7 +31,7 @@ function TopNav() {
         </Link>
         <div className="flex items-center gap-2 self-center">
           <span className="hover:bg-cal-muted hover:text-emphasis text-default group flex items-center rounded-full text-sm font-medium transition lg:hidden">
-            <KBarTrigger />
+            <CommandPaletteTrigger />
           </span>
           <button className="hover:bg-cal-muted hover:text-subtle text-muted rounded-full p-1 transition focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
             <span className="sr-only">{t("settings")}</span>

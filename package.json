@@ -179,5 +179,11 @@
   "syncpack": {
     "filter": "^(?!@calcom).*",
     "semverRange": ""
+  },
+  "dependencies": {
+    "@ai-sdk/react": "^3.0.96",
+    "ai": "^6.0.94",
+    "better-cmdk": "^0.0.23",
+    "modifywithai": "^3.0.1"
   }
 }

@@ -21,7 +21,8 @@ import { Logo } from "@calcom/ui/components/logo";
 import { SkeletonText } from "@calcom/ui/components/skeleton";
 import { Tooltip } from "@calcom/ui/components/tooltip";
 
-import { KBarTrigger } from "./Kbar";
+import { CommandPaletteTrigger } from "@calcom/web/modules/command-palette/CommandPalette";
+
 import { Navigation } from "./navigation/Navigation";
 import { useBottomNavItems } from "./useBottomNavItems";
 import { ProfileDropdown } from "./user-dropdown/ProfileDropdown";
@@ -131,7 +132,7 @@ export function SideBar({ bannersHeight, user }: SideBarProps) {
                   <UserDropdown small />
                 </div>
               )}
-              <KBarTrigger />
+              <CommandPaletteTrigger />
             </div>
           </header>
           {/* logo icon for tablet */}

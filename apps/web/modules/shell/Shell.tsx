@@ -18,8 +18,9 @@ import { Button } from "@calcom/ui/components/button";
 import { ErrorBoundary } from "@calcom/ui/components/errorBoundary";
 import { SkeletonText } from "@calcom/ui/components/skeleton";
 
+import { CommandPalette } from "@calcom/web/modules/command-palette/CommandPalette";
+
 import { DynamicModals } from "./DynamicModals";
-import { KBarContent, KBarRoot } from "./Kbar";
 import { SideBarContainer } from "./SideBar";
 import { TopNavContainer } from "./TopNav";
 import { BannerContainer } from "./banners/LayoutBanner";
@@ -90,12 +91,18 @@ export type LayoutProps = {
   disableSticky?: boolean;
 };
 
-const KBarWrapper = ({ children, withKBar = false }: { withKBar: boolean; children: React.ReactNode }) =>
-  withKBar ? (
-    <KBarRoot>
+const CommandPaletteWrapper = ({
+  children,
+  withPalette = false,
+}: {
+  withPalette: boolean;
+  children: React.ReactNode;
+}) =>
+  withPalette ? (
+    <>
       {children}
-      <KBarContent />
-    </KBarRoot>
+      <CommandPalette />
+    </>
   ) : (
     <>{children}</>
   );
@@ -103,9 +110,9 @@ const KBarWrapper = ({ children, withKBar = false }: { withKBar: boolean; childr
 const PublicShell = (props: LayoutProps) => {
   const { status } = useSession();
   return (
-    <KBarWrapper withKBar={status === "authenticated"}>
+    <CommandPaletteWrapper withPalette={status === "authenticated"}>
       <Layout {...props} />
-    </KBarWrapper>
+    </CommandPaletteWrapper>
   );
 };
 
@@ -116,9 +123,9 @@ export default function Shell(props: LayoutProps) {
   useAppTheme();
 
   return !props.isPublic ? (
-    <KBarWrapper withKBar>
+    <CommandPaletteWrapper withPalette>
       <Layout {...props} />
-    </KBarWrapper>
+    </CommandPaletteWrapper>
   ) : (
     <PublicShell {...props} />
   );
