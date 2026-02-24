@@ -1,4 +1,4 @@
-import { createAssistantTokenHandler } from "modifywithai/nextjs";
+import { createAssistantTokenHandler } from "modifywithai/dist/nextjs";
 import { headers, cookies } from "next/headers";
 
 import { getServerSession } from "@calcom/features/auth/lib/getServerSession";
